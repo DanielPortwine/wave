@@ -33,7 +33,6 @@ class FacebookController extends Controller
                 'email' => $user->email,
                 'avatar' => 'users/'.$user->id.'.jpg',
                 'facebook_id' => $user->id,
-                'facebook_token' => $user->token,
                 'email_verified_at' => now(),
                 'password' => bcrypt(Str::random(32)),
                 'username' => Str::slug($user->name, ''),
