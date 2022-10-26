@@ -33,6 +33,12 @@ return [
 
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
+    ],
+
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT'),
     ]
 
 ];
