@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\FacebookController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -26,3 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Wave routes
 Wave::routes();
+
+Route::controller(FacebookController::class)->group(function() {
+    Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
+    Route::get('auth/facebook/callback', 'facebookSignIn');
+});
